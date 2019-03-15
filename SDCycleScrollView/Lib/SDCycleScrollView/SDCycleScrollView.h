@@ -105,8 +105,8 @@ typedef enum {
 /** 本地图片数组 */
 @property (nonatomic, strong) NSArray *localizationImageNamesGroup;
 
-
-
+/** imageURLStringsGroup如果传入model,需要告诉URL存在model的哪个key中 */
+@property (nonatomic, copy) NSString *urlKeyOfModel;
 
 
 //////////////////////  滚动控制API //////////////////////
@@ -133,6 +133,9 @@ typedef enum {
 
 /** 可以调用此方法手动控制滚动到哪一个index */
 - (void)makeScrollViewScrollToIndex:(NSInteger)index;
+
+/** 手动滚动到index */
+- (void)mfo_scrollToIndex:(NSInteger)index;
 
 /** 解决viewWillAppear时出现时轮播图卡在一半的问题，在控制器viewWillAppear时调用此方法 */
 - (void)adjustWhenControllerViewWillAppera;
